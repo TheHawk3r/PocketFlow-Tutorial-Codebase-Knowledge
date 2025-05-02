@@ -10,7 +10,7 @@ dotenv.load_dotenv()
 DEFAULT_INCLUDE_PATTERNS = {
     "*.py", "*.js", "*.jsx", "*.ts", "*.tsx", "*.go", "*.java", "*.pyi", "*.pyx",
     "*.c", "*.cc", "*.cpp", "*.h", "*.md", "*.rst", "Dockerfile",
-    "Makefile", "*.yaml", "*.yml",
+    "Makefile", "*.yaml", "*.yml", "*.ron", "*.rs",
 }
 
 DEFAULT_EXCLUDE_PATTERNS = {
@@ -18,7 +18,7 @@ DEFAULT_EXCLUDE_PATTERNS = {
     "docs/*", 
     "venv/*", ".venv/*", "*test*", "tests/*", "docs/*", "examples/*", "v1/*",
     "dist/*", "build/*", "experimental/*", "deprecated/*", "misc/*", 
-    "legacy/*", ".git/*", ".github/*", ".next/*", ".vscode/*", "obj/*", "bin/*", "node_modules/*", "*.log"
+    "legacy/*", ".git/*", ".github/*", ".next/*", ".vscode/*", "obj/*", "bin/*", "node_modules/*", "*.log", "*.obj", "*.vox", "*.toml",
 }
 
 # --- Main Function ---
@@ -41,7 +41,7 @@ def main():
     # Add use_cache parameter to control LLM caching
     parser.add_argument("--no-cache", action="store_true", help="Disable LLM response caching (default: caching enabled)")
     # Add max_abstraction_num parameter to control the number of abstractions
-    parser.add_argument("--max-abstractions", type=int, default=10, help="Maximum number of abstractions to identify (default: 10)")
+    parser.add_argument("--max-abstractions", type=int, default=50, help="Maximum number of abstractions to identify (default: 10)")
 
     args = parser.parse_args()
 

@@ -86,7 +86,7 @@ class IdentifyAbstractions(Node):
         project_name = shared["project_name"]  # Get project name
         language = shared.get("language", "english")  # Get language
         use_cache = shared.get("use_cache", True)  # Get use_cache flag, default to True
-        max_abstraction_num = shared.get("max_abstraction_num", 10)  # Get max_abstraction_num, default to 10
+        max_abstraction_num = shared.get("max_abstraction_num", 50)  # Get max_abstraction_num, default to 10
 
         # Helper to create context from files, respecting limits (basic example)
         def create_llm_context(files_data):

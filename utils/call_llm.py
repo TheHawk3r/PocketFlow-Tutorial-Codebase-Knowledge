@@ -4,16 +4,16 @@ import json
 
 # Configurează conexiunea către LM Studio local
 local_api_url = "http://127.0.0.1:1234/v1/completions"  # Adresa corectă pentru serverul tău local
-api_key = "gemma-3-27b-it"  # Dacă ai nevoie de un API key pentru acces
+api_key = "deepseek-r1-distill-qwen-14b"  # Dacă ai nevoie de un API key pentru acces
 
 def call_llm(prompt: str, use_cache: bool = False):
     cprint("[Querying local LLM via LM Studio]", "cyan")
     try:
         # Setează datele pentru cererea POST
         data = {
-            "model": "gemma-3-27b-it",  # Modelul specificat în LM Studio
+            "model": "deepseek-r1-distill-qwen-14b",  # Modelul specificat în LM Studio
             "prompt": prompt,
-            "max_tokens": 100,  # Poți ajusta acest parametru
+            "max_tokens": 1000,  # Poți ajusta acest parametru
             "temperature": 0.7,  # Poți ajusta acest parametru
         }
 
